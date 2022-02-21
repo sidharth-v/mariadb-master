@@ -10,3 +10,11 @@ acl:
     user: wordpress
     access: ALL
     
+restore:
+  - database: wordpress
+    source:
+      url: 'https://www.ecloudcontrol.com/wp-content/uploads/2021/06/accountsdb-springboot.sql_.zip'
+    user: wordpress
+    password: $MYSQL_WORDPRESS_PASSWORD
+    token: 20220221-0537
+    
