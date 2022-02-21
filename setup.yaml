@@ -1,12 +1,9 @@
 users:
-  - name: wordpress
-    password: $MYSQL_WORDPRESS_PASSWORD
   - name: springbootweb
     password: $MYSQL_SPRINGBOOTWEB_PASSWORD
     role: superuser
     
 databases:
-  - name: wordpress
   - name: springbootweb
     owner: springbootweb
     tablespace:
@@ -18,12 +15,10 @@ databases:
         search_path: true
   
 acl:
-  - database: wordpress
-    user: wordpress
-    access: ALL
   - database: springbootweb
     user: springbootweb
     accexx: ALL
+
 restore:
   - database: springbootweb
     source:
