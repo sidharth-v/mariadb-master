@@ -1,15 +1,29 @@
 users:
   - name: wordpress
     password: $MYSQL_WORDPRESS_PASSWORD
+  - name: springbootweb
+    password: $POSTGRESQL_SPRINGBOOTWEB_PASSWORD
+    role: superuser
     
 databases:
   - name: wordpress
+  - name: springbootweb
+    owner: springbootweb
+    tablespace:
+      - name: tb1
+        location: /appz/data/tb1
+    schemas:
+      - name: schema1
+        authorised_user: springbootweb
+        search_path: true
   
 acl:
   - database: wordpress
     user: wordpress
     access: ALL
-    
+  - database: springbootweb
+    user: springbootweb
+    accexx: ALL
 restore:
   - database: wordpress
     source:
