@@ -1,7 +1,7 @@
 app:
     name: mariadb Master
     code: mariadbmaster
-    notify: appzdev@cloudbourne.co
+    notify: svengathattil@ecloudcontrol.com
 
 build:
     version: 10.4
@@ -11,7 +11,7 @@ build:
     image_template: mariadb_master-10.4
 
 deploy:
-    context: alpha/DEV
+    context: sidharth-v/DEV
     type: statefulset
     replicas: 1
     port:
@@ -19,10 +19,14 @@ deploy:
 
 volumes:
   - claim: mariadb-master-data
+    class: openebs-replicated
+    matchLabels: false
     mount: /appz/data
     name: data
     size: 5Gi
   - claim: mariadb-master-backup
+    class: openebs-replicated
+    matchLabels: false
     mount: /appz/backup
     name: backup
     size: 5Gi
