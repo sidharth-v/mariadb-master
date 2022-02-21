@@ -2,7 +2,7 @@ users:
   - name: wordpress
     password: $MYSQL_WORDPRESS_PASSWORD
   - name: springbootweb
-    password: $POSTGRESQL_SPRINGBOOTWEB_PASSWORD
+    password: $MYSQL_SPRINGBOOTWEB_PASSWORD
     role: superuser
     
 databases:
