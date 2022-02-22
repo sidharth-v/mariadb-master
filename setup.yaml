@@ -1,9 +1,11 @@
 users:
+  - name: wordpress
+    password: $MYSQL_WORDPRESS_PASSWORD
   - name: springbootweb
     password: $MYSQL_SPRINGBOOTWEB_PASSWORD
     role: superuser
-    
 databases:
+  - name: wordpress
   - name: springbootweb
     owner: springbootweb
     tablespace:
@@ -15,16 +17,9 @@ databases:
         search_path: true
   
 acl:
+  - database: wordpress
+    user: wordpress
+    access: ALL
   - database: springbootweb
     user: springbootweb
-    accexx: ALL
-
-restore:
-  - database: springbootweb
-    source:
-      url: 'https://www.ecloudcontrol.com/wp-content/uploads/2021/06/accountsdb-springboot.sql_.zip'
-    user: springbootweb
-    password: $MYSQL_SPRINGBOOTWEB_PASSWORD
-    token: 20220221-0755
-    
-    
+    access: ALL
