@@ -19,12 +19,10 @@ deploy:
 
 volumes:
   - claim: mariadb-master-data
-    class: microk8s-hostpath
     mount: /appz/data
     name: data
     size: 5Gi
   - claim: mariadb-master-backup
-    class: microk8s-hostpath
     mount: /appz/backup
     name: backup
     size: 5Gi
