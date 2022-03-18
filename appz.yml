@@ -12,6 +12,7 @@ build:
 
 deploy:
     context: sidharth-v/DEV
+    ingress: none
     type: statefulset
     replicas: 1
     port:
