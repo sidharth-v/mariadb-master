@@ -21,10 +21,14 @@ deploy:
 
 volumes:
   - claim: mariadb-master-data
+    class: openebs-replicated
+    matchLabels: false
     mount: /appz/data
     name: data
     size: 5Gi
   - claim: mariadb-master-backup
+    class: openebs-replicated
+    matchLabels: false
     mount: /appz/backup
     name: backup
     size: 5Gi
